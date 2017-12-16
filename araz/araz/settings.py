@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8080',
+    '144.76.233.153',
 )
 
 CORS_ALLOW_METHODS = (
@@ -124,8 +124,12 @@ WSGI_APPLICATION = 'araz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'araz',
+        'USER': 'arazuser',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -168,10 +172,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_DIR = os.path.join(BASE_DIR, "static"),
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 MEDIA_DIR = os.path.join(BASE_DIR, "media")
