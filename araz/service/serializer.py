@@ -15,8 +15,11 @@ class OurServiceListSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_image(self, obj):
-        image = 'http://127.0.0.1:8000'+obj.image.url
-        return image
+      try:
+        image = 'http://144.76.233.153:8000' + obj.image.url
+      except:
+        image = None
+      return image
 
 class ServiceDetailCreateSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
@@ -25,5 +28,8 @@ class ServiceDetailCreateSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_image(self, obj):
-        image = 'http://127.0.0.1:8000'+obj.image.url
-        return image
+      try:
+        image = 'http://144.76.233.153:8000' + obj.image.url
+      except:
+        image = None
+      return image
