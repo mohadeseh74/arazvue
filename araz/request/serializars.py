@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from request.models import Country, Request
+from request.models import Request
 
-class CountryListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Country
-        fields = '__all__'
+# class CountryListSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Country
+#         fields = '__all__'
 
 # class MethodListSerializer(serializers.ModelSerializer):
 #     class Meta:
@@ -17,10 +17,13 @@ class RequestCreateSerializer(serializers.ModelSerializer):
         fields = [
         'first_name',
         'last_name',
+        'sender',
+        'recipient',
+        'goods_type',
+        'weight',
+        'dimentions',
         'phone_number',
         'email',
-        'sender_country',
-        'recipient_country',
         'method',
 	'id'
         ]
