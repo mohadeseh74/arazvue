@@ -17,7 +17,7 @@ class Request(models.Model):
     goods_type = models.CharField(max_length=50, blank=False, null=True)
     weight = models.CharField(max_length=50, blank=True, null=True)
     dimentions = models.CharField(max_length=50, blank=True, null=True)
-    phone_number = models.IntegerField(blank=False)
+    phone_number = models.BigIntegerField(blank=False)
     email = models.EmailField(blank=True)
     method = models.CharField(max_length=50, blank=False)
     checked = models.BooleanField(default=False)
