@@ -3,7 +3,7 @@ import datetime
 
 class Contact(models.Model):
     name = models.CharField(blank=False, max_length=100)
-    phone_number = models.IntegerField(blank=True, null=True)
+    phone_number = models.BigIntegerField(blank=True, null=True)
     description = models.TextField(blank=True)
     email = models.EmailField(blank=False)
     checked = models.BooleanField(default=False)
